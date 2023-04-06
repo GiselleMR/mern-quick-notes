@@ -1,5 +1,6 @@
 import { set}  from "mongoose";
 import { useState } from "react";
+import * as notesService from '../../utilities/notes-service';
 
 export default function NewNotePage() {
   const [note, setNote] = useState('');
@@ -8,9 +9,9 @@ export default function NewNotePage() {
     setNote(evt.target.value)
   };
 
-  function handleSubmit(evt) {
+  async function handleSubmit(evt) {
     evt.preventDefault();
-    alert(note)
+    notesService.createNote(note);
     setNote('');
   };
 
