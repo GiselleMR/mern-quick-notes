@@ -1,12 +1,9 @@
 const express = require('express');
 const router = express.Router();
-// const usersCtrl = require('../../controllers/api/users');
+const notesCtrl = require('../../controllers/api/notes');
 const ensureLoggedIn = require('../../config/ensureLoggedIn');
 
 
-router.post('/', function(req, res) {
-    console.log(req.body)
-    res.json(req.body)
-});
+router.post('/', notesCrtl.create);
 
 module.exports = router 
