@@ -1,3 +1,4 @@
+import { set}  from "mongoose";
 import { useState } from "react";
 
 export default function NewNotePage() {
@@ -10,6 +11,7 @@ export default function NewNotePage() {
   function handleSubmit(evt) {
     evt.preventDefault();
     alert(note)
+    setNote('');
   };
 
   return (
@@ -17,7 +19,7 @@ export default function NewNotePage() {
       <h1>New Note</h1>
       <form action="" onSubmit={handleSubmit} >
         <label htmlFor="text">Text:
-          <input type="text" name="text" id="text" onChange={handleChange} />
+          <input type="text" name="text" id="text" onChange={handleChange} value={note} />
         </label>
         <input type="submit" value="add note" />
       </form>
