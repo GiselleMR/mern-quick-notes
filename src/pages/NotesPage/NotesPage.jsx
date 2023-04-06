@@ -1,6 +1,8 @@
 import { checkToken } from '../../utilities/users-service';
+import { useState } from "react";
 
 export default function NotesPage() {
+  const [notes, setNotes] = useState([]);
 
   async function handleCheckToken() {
     const expDate = await checkToken();

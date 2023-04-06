@@ -11,7 +11,8 @@ export default function NewNotePage() {
 
   async function handleSubmit(evt) {
     evt.preventDefault();
-    notesService.createNote(note);
+    const createdNote = await notesService.createNote(note);
+    console.log(createdNote)
     setNote('');
   };
 
